@@ -1,0 +1,33 @@
+{
+  "name": "api-request-throttling",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "api": "fastify start -l info -w src/rateLimitedApi.js",
+    "server": "fastify start -l info -p 3001 -w src/server.js",
+    "worker": "node src/worker.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/autotelic/api-request-throttling.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/autotelic/api-request-throttling/issues"
+  },
+  "homepage": "https://github.com/autotelic/api-request-throttling#readme",
+  "dependencies": {
+    "@autotelic/fastify-bee-queue": "^0.1.0",
+    "fastify": "^3.27.2",
+    "fastify-cli": "^2.15.0",
+    "fastify-rate-limit": "^5.7.2",
+    "fastify-redis": "^4.3.3",
+    "rate-limiter-flexible": "^2.3.6",
+    "undici": "^4.14.1"
+  }
+}
